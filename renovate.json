@@ -1,0 +1,18 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": ["kubernetes"],
+  "kubernetes": {
+    "managerFilePatterns": ["/^manifests/.*\\.ya?ml$/"]
+  },
+  "packageRules": [
+    {
+      "matchPackageNames": ["nginx"],
+      "allowedVersions": ">=1.26.0 <1.27.0"
+    }
+  ],
+  "dependencyDashboard": false,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 1,
+  "minimumReleaseAge": "0 days",
+  "automerge": false
+}
