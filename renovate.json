@@ -8,11 +8,18 @@
     {
       "matchPackageNames": ["nginx"],
       "allowedVersions": ">=1.26.0 <1.27.0"
+    },
+    {
+      "matchPackageNames": ["postgres"],
+      "allowedVersions": "<19",
+      "prBodyNotes": [
+        "Codex 自動レビューの PoC 用です。マージ・デプロイは禁止です。"
+      ]
     }
   ],
   "dependencyDashboard": false,
   "prHourlyLimit": 0,
-  "prConcurrentLimit": 1,
+  "prConcurrentLimit": 2,
   "minimumReleaseAge": "0 days",
   "automerge": false
 }

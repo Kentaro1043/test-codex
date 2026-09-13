@@ -24,3 +24,11 @@ gh workflow run renovate.yml --ref main
 認証には `GITHUB_TOKEN` を使うため、PR 作成者は `github-actions[bot]` です。
 Renovate GitHub App の `renovate[bot]` や PAT による PR とは条件が異なります。
 セキュリティレビューの実行有無は、通常のコードレビューと分けて確認します。
+
+## PostgreSQL の更新 PR
+
+`manifests/postgres.yaml` は PostgreSQL 17 と永続ボリュームを使う StatefulSet です。
+`postgres-credentials` Secret の `password` キーが存在することを前提とします。
+データは Pod 再作成後も保持する想定です。
+Renovate で 18 系への更新 PR を作成し、バージョン変更と既存 manifest の互換性がレビューされるか検証します。
+この PoC の更新 PR はマージ・デプロイしません。
